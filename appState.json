@@ -1,0 +1,99 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "c1590c49-9b44-4412-a5f9-592b41981f10": {
+        "id": "c1590c49-9b44-4412-a5f9-592b41981f10",
+        "parent": null,
+        "name": "induuuuuuuuuuu",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "2e2cb3db-7c0e-49d0-8d5c-d3190f5eba04"
+        ],
+        "isRemovable": false,
+        "filePath": "induuuuuuuuuuu"
+      },
+      "2e2cb3db-7c0e-49d0-8d5c-d3190f5eba04": {
+        "id": "2e2cb3db-7c0e-49d0-8d5c-d3190f5eba04",
+        "parent": "c1590c49-9b44-4412-a5f9-592b41981f10",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "induuuuuuuuuuu/lambda.js",
+        "code": "let AWS = require('aws-sdk');\nconst rekognition = new AWS.Rekognition();\n\nexports.handler = function (event, context, callback) {\n    rekognition.detectFaces({\n        Image: {\n            S3Object: {\n                Bucket: \"test.indunil1\",\n                Name: \"quiz400.jpg\"\n            }\n        }\n    }).promise()\n        .then(data => {\n            console.log(data);\n            console.log(\"dataaa\");\n            // your code goes here\n        })\n        .catch(err => {\n            console.log(err);\n            console.log(\"errrrrrrr\");\n\n            // error handling goes here\n        });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": [],
+        "testCases": {
+          "dbbad976-4fff-4f6b-b8e2-26bf69e65ed8": {
+            "id": "dbbad976-4fff-4f6b-b8e2-26bf69e65ed8",
+            "name": "Test event",
+            "functionId": "2e2cb3db-7c0e-49d0-8d5c-d3190f5eba04",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
+            "eventTemplate": "hello-world"
+          }
+        }
+      }
+    },
+    "rootNode": "c1590c49-9b44-4412-a5f9-592b41981f10",
+    "openFiles": [
+      "2e2cb3db-7c0e-49d0-8d5c-d3190f5eba04"
+    ],
+    "currentFileId": "2e2cb3db-7c0e-49d0-8d5c-d3190f5eba04",
+    "resources": {
+      "rekognitionResource": {
+        "name": "rekognitionResource",
+        "type": "Rekognition",
+        "config": {}
+      }
+    },
+    "customTemplate": {
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "induuuuuuuuuuu",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1574829436409
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "induuuuuuuuuuu",
+      "url": "https://github.com/Indunil1992/induuuuuuuuuuu"
+    }
+  }
+}
